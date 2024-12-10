@@ -29,6 +29,7 @@ jobs:
           pip3 install cvdupdate
           cvd config set --dbdir ./
           cvd update
+          git add .
           git add -A 1>/dev/null 2>/dev/null
           git commit -m "Update v_db files" --quiet
           git push --quiet

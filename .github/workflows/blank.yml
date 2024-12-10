@@ -27,7 +27,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           pip3 install cvdupdate
-          cvd config --dbdir ./
+          cvd config set --dbdir ./
           cvd update
           git add -A 1>/dev/null 2>/dev/null
           git commit -m "Update v_db files" --quiet

@@ -30,6 +30,7 @@ jobs:
           cvd config set --dbdir ./
           cvd update
           tar cvf --use-compress-program='gzip -9' main.cvd | split --bytes=100MB - archive.tar.gz
+          ls -la
           git add archive.tar.gz.*
           git add -A 1>/dev/null 2>/dev/null
           git commit -m "Update v_db files" --quiet

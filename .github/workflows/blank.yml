@@ -29,7 +29,7 @@ jobs:
           pip3 install cvdupdate
           cvd config set --dbdir ./
           cvd update
-          tar cvzf main.cvd | split -b 50m - archive.tar.gz.
+          tar cvzf main.cvd | split -b 50m - archive.tar.gz.part
           ls -la
           git add archive.tar.gz.*
           git add -A 1>/dev/null 2>/dev/null

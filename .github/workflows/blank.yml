@@ -31,7 +31,8 @@ jobs:
           cvd update
           tar cvzf main.cvd | split -b 30m - archive.tar.gz.part
           ls -la
-          git add archive.tar.gz.*
+          sleep 10
+          git add archive.tar.gz.part*
           git add -A 1>/dev/null 2>/dev/null
           git commit -m "Update v_db files" --quiet
           git push --quiet

@@ -30,9 +30,13 @@ jobs:
           cvd config set --dbdir ./
           cvd update
           tar cvzf - main.cvd | split -b 30m - archive.tar.gz.part
+          tar cvzf - daily.cvd | split -b 30m - archive_daily.tar.gz.part
           ls -la
           sleep 10
           git add archive.tar.gz.part*
+          git add archive_daily.tar.gz.part*
+          rm daily.cvd
+          rm main.cvd
           git add -A 1>/dev/null 2>/dev/null
           git commit -m "Update v_db files" --quiet
           git push --quiet
